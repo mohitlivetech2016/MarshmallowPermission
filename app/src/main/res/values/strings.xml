@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MarshmallowPermission</string>
+    <string name="title_activity_main_gps_permission">MainGpsPermissionActivity</string>
 </resources>

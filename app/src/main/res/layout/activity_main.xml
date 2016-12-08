@@ -8,10 +8,20 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.app.marshmallowpermission.MainActivity">
+    tools:context="com.app.marshmallowpermission.TryPermissionCheck.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <ImageView
+        android:id="@+id/iv_pic"
+        android:src="@drawable/image1"
+        android:layout_width="match_parent"
+        android:layout_height="250dp" />
+
+    <ImageView
+        android:background="@drawable/camera"
+        android:id="@+id/iv_camera"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
 </RelativeLayout>
