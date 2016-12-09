@@ -2,18 +2,45 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.app.marshmallowpermission">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".TryPermissionCheck.MainActivity">
+            The reason this is a tools: namespace attribute is that this is only a designtime
+            mapping for use by the tool. The layout itself can be used by multiple
+            activities/fragments etc. We just want to give you a way to pick a designtime binding
+            such that we can for example show the right theme; you can change it at any time, just
+            like you can change our listview and fragment bindings, etc.
+        </activity>
+        <activity
+            android:name=".gpsPermissionCheckWithAndroidVersion.activity.MainGpsPermissionActivity"
+            android:label="@string/title_activity_main_gps_permission"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".gpsPermissionCheckWithAndroidVersion.TryPermissionCheckSecond.MainPermissionCheckSecondActivity"
+            android:label="@string/title_activity_main_permission_check_second"
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+        <activity
+            android:name=".gpsPermissionCheckWithAndroidVersion.activity.SplashActivity"
+            android:label="@string/title_activity_splash"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>The reason this is a tools: namespace attribute is that this is only a designtime mapping for use by the tool. The layout itself can be used by multiple activities/fragments etc. We just want to give you a way to pick a designtime binding such that we can for example show the right theme; you can change it at any time, just like you can change our listview and fragment bindings, etc.
+            </intent-filter>
+
         </activity>
     </application>
 

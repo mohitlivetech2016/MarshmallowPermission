@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MarshmallowPermission</string>
+    <string name="title_activity_main_gps_permission">MainGpsPermissionActivity</string>
+    <string name="title_activity_main_permission_check_second">MainPermissionCheckSecondActivity
+    </string>
+    <string name="title_activity_splash">SplashActivity</string>
 </resources>
