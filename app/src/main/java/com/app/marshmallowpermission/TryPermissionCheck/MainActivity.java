@@ -99,7 +99,7 @@ public class MainActivity extends AppCompatActivity implements ActivityCompat.On
 
             } else {
                 //Permission not granted
-                Toast.makeText(MainActivity.this,"You need to grant camera permission to use camera",Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, "You need to grant camera permission to use camera", Toast.LENGTH_LONG).show();
             }
 
         }

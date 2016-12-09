@@ -19,7 +19,7 @@ public class SplashActivity extends AppCompatActivity {
         setContentView(R.layout.activity_splash);
 
 
-        Thread thread=new Thread(){
+        Thread thread = new Thread() {
 
             @Override
             public void run() {
@@ -28,7 +28,7 @@ public class SplashActivity extends AppCompatActivity {
                 try {
                     sleep(3000);
 
-                    Intent intent=new Intent(getApplicationContext(), MainGpsPermissionActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), MainGpsPermissionActivity.class);
                     startActivity(intent);
                     finish();
 
@@ -41,7 +41,7 @@ public class SplashActivity extends AppCompatActivity {
 
         };
 
-                thread.start();
+        thread.start();
     }
 
     @Override

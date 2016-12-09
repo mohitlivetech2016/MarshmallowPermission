@@ -19,27 +19,26 @@ import com.app.marshmallowpermission.gpsPermissionCheckWithAndroidVersion.TryPer
 
 public class MainGpsPermissionActivity extends AppCompatActivity {
 
-    private Button mBtnStartService,mBtnStopService;
+    private Button mBtnStartService, mBtnStopService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_gps_permission);
 
-        mBtnStartService=(Button)findViewById(R.id.idBtnGpsPermissionCheck_StartService);
-        mBtnStopService=(Button)findViewById(R.id.idBtnGpsPermissionCheck_StopService);
+        mBtnStartService = (Button) findViewById(R.id.idBtnGpsPermissionCheck_StartService);
+        mBtnStopService = (Button) findViewById(R.id.idBtnGpsPermissionCheck_StopService);
 
         mBtnStartService.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
 
-                if(gpsPermissonFineLocation())
-                {
+                if (gpsPermissonFineLocation()) {
 
 
-                    Toast.makeText(MainGpsPermissionActivity.this,"You already have the permission",Toast.LENGTH_LONG).show();
-                    return ;
+                    Toast.makeText(MainGpsPermissionActivity.this, "You already have the permission", Toast.LENGTH_LONG).show();
+                    return;
 
                 }
 
@@ -53,28 +52,19 @@ public class MainGpsPermissionActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
-
             }
         });
-
-
-
-
-
-
-
-
     }
 
     private void requestFineLocationPermission() {
 
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.ACCESS_FINE_LOCATION)){
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.ACCESS_FINE_LOCATION)) {
 
 
-            Toast.makeText(MainGpsPermissionActivity.this,"This Permission Require to get your location ",Toast.LENGTH_LONG).show();
+            Toast.makeText(MainGpsPermissionActivity.this, "This Permission Require to get your location ", Toast.LENGTH_LONG).show();
         }
 
-        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.ACCESS_FINE_LOCATION},2);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 2);
 
 
     }
@@ -93,16 +83,16 @@ public class MainGpsPermissionActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
         //Checking the request code of our request
-        if(requestCode == 2){
+        if (requestCode == 2) {
 
             //If permission is granted
-            if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
                 //Displaying a toast
-                Toast.makeText(this,"Permission granted now you can read the storage",Toast.LENGTH_LONG).show();
-            }else{
+                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
+            } else {
                 //Displaying another toast if permission is not granted
-                Toast.makeText(this,"Oops you just denied the permission",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
             }
         }
     }

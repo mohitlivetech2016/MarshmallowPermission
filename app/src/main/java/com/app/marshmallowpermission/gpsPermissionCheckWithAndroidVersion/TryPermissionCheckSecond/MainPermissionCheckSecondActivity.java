@@ -39,9 +39,9 @@ public class MainPermissionCheckSecondActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //First checking if the app is already having the permission
-                if(isReadStorageAllowed()){
+                if (isReadStorageAllowed()) {
                     //If permission is already having then showing the toast
-                    Toast.makeText(MainPermissionCheckSecondActivity.this,"You already have the permission",Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainPermissionCheckSecondActivity.this, "You already have the permission", Toast.LENGTH_LONG).show();
                     //Existing the method with return
                     return;
                 }
@@ -56,7 +56,7 @@ public class MainPermissionCheckSecondActivity extends AppCompatActivity {
     private boolean isReadStorageAllowed() {
         //Getting the permission status
         int result = ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE);
-       //     int result=2;
+        //     int result=2;
         //If permission is granted returning true
         if (result == PackageManager.PERMISSION_GRANTED)
             return true;
@@ -66,18 +66,17 @@ public class MainPermissionCheckSecondActivity extends AppCompatActivity {
     }
 
     //Requesting permission
-    private void requestStoragePermission(){
+    private void requestStoragePermission() {
 
-        if (ActivityCompat.shouldShowRequestPermissionRationale(this,Manifest.permission.READ_EXTERNAL_STORAGE)){
+        if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
             //If the user has denied the permission previously your code will come to this block
             //Here you can explain why you need this permission
             //Explain here why you need this permission
         }
 
 
-
         //And finally ask for the permission
-        ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},STORAGE_PERMISSION_CODE);
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
     }
 
     //This method will be called when the user will tap on allow or deny
@@ -85,16 +84,16 @@ public class MainPermissionCheckSecondActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 
         //Checking the request code of our request
-        if(requestCode == STORAGE_PERMISSION_CODE){
+        if (requestCode == STORAGE_PERMISSION_CODE) {
 
             //If permission is granted
-            if(grantResults.length >0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
                 //Displaying a toast
-                Toast.makeText(this,"Permission granted now you can read the storage",Toast.LENGTH_LONG).show();
-            }else{
+                Toast.makeText(this, "Permission granted now you can read the storage", Toast.LENGTH_LONG).show();
+            } else {
                 //Displaying another toast if permission is not granted
-                Toast.makeText(this,"Oops you just denied the permission",Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Oops you just denied the permission", Toast.LENGTH_LONG).show();
             }
         }
     }
