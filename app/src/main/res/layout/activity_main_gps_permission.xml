@@ -18,12 +18,12 @@
         android:layout_marginTop="170sp"
         />
 
-    <Button
+   <!-- <Button
         android:text="Stop Service"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/idBtnGpsPermissionCheck_StopService"
         android:gravity="center"
         android:layout_marginTop="70sp"
-        />
+        />-->
 </LinearLayout>
